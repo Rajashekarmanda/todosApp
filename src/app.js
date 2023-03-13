@@ -9,21 +9,16 @@ let clearAllButtonEl = document.getElementById('clearAllButton')
 let todosContainerEl = document.getElementById("todoItemsContainer")
 let todoItemsMainContainerEl = document.getElementById("todoItemsMainContainer")
 
-
 let todosListAll = []
 let count = 0
-
 clearAllButtonEl.classList.add('hidden-class')
 
 inputFieldEl.addEventListener("input", function (event) {
-
     inputFieldEl.value = event.target.value
-
     //console.log(event.target.value)
 })
 
 addButtonEl.addEventListener("click", function (event) {
-
     let divEl = document.createElement('div')
     divEl.setAttribute('class', 'todo-item-container')
     divEl.setAttribute('id', `todoContainer${count + 1}`)
@@ -57,10 +52,7 @@ addButtonEl.addEventListener("click", function (event) {
         completed: false,
         imageEl: deleteIconEl
     })
-
     count++
-
-
 
     checkboxEl.addEventListener('click', function (e) {
 
@@ -114,94 +106,56 @@ addButtonEl.addEventListener("click", function (event) {
 })
 
 activeButtonEl.addEventListener('click', function () {
-
     for (let eachItem of todosListAll) {
-
         if (eachItem.active === false) {
-
             eachItem.element.classList.add('hidden-class')
             eachItem.imageEl.classList.add('hidden-class')
-
         } else {
-
             eachItem.element.classList.remove('hidden-class')
         }
     }
-
     activeButtonEl.classList.add('active-button-class')
-
     completedButtonEl.classList.remove('active-button-class')
-
     allButtonEl.classList.remove('active-button-class')
-
     clearAllButtonEl.classList.add('hidden-class')
-
     inputFieldEl.classList.remove('hidden-class')
-
     addButtonEl.classList.remove('hidden-class')
 })
 
 completedButtonEl.addEventListener('click', function () {
-
     for (let eachItem of todosListAll) {
-
         if (eachItem.completed === false) {
-
             eachItem.element.classList.add('hidden-class')
-
         } else {
-
             eachItem.element.classList.remove('hidden-class')
             eachItem.imageEl.classList.remove('hidden-class')
         }
     }
-
     completedButtonEl.classList.add('active-button-class')
-
     activeButtonEl.classList.remove('active-button-class')
-
     allButtonEl.classList.remove('active-button-class')
-
     clearAllButtonEl.classList.remove('hidden-class')
-
     inputFieldEl.classList.add('hidden-class')
-
     addButtonEl.classList.add('hidden-class')
-
 })
 
 allButtonEl.addEventListener('click', function () {
-
     for (let eachItem of todosListAll) {
-
         eachItem.element.classList.remove('hidden-class')
-        eachItem.imageEl.classList.add('hidden-class')
-
+        eachItem.imageEl.classList.add('hidden-class');
     }
-
     allButtonEl.classList.add('active-button-class')
-
     activeButtonEl.classList.remove('active-button-class')
-
     completedButtonEl.classList.remove('active-button-class')
-
     clearAllButtonEl.classList.add('hidden-class')
-
     inputFieldEl.classList.remove('hidden-class')
-
     addButtonEl.classList.remove('hidden-class')
 })
 
-
 clearAllButtonEl.addEventListener('click', function () {
-
     for (let eachTodo of todosListAll) {
-
         if (eachTodo.completed === true) {
-
             eachTodo.element.remove()
         }
     }
-
-
 })
