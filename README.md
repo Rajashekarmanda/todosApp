@@ -1,6 +1,6 @@
 # todo APP
 
-# netlify link- https://todoapprajashekarmanda.netlify.app/
+# netlify link- https://rajashekarmandatodoapp.netlify.app/
 
 # Github Link- https://github.com/Rajashekarmanda/todosApp.git
 
