@@ -22,7 +22,8 @@ inputFieldEl.addEventListener("input", function (event) {
     inputFieldEl.value = event.target.value
 })
 
-addButtonEl.addEventListener("click", function (event) {
+addButtonEl.addEventListener("submit", function (event) {
+    event.preventDefault()
     let divEl = document.createElement('div')
     divEl.setAttribute('class', 'todo-item-container')
     divEl.setAttribute('id', `todoContainer${count + 1}`)
@@ -85,6 +86,7 @@ addButtonEl.addEventListener("click", function (event) {
             }
         })
         todosListAll = [...filterTodosListRest, todoToggleItem]
+
     })
     deleteIconEl.addEventListener('click', () => divEl.remove())
 })
@@ -104,3 +106,4 @@ allButtonEl.addEventListener('click', function () {
 clearAllButtonEl.addEventListener('click', function () {
     todosListAll.map(eachTodo => (eachTodo.completed === true ? eachTodo.element.remove() : ''))
 })
+console.log(todosListAll)

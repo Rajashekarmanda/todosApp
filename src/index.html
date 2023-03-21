@@ -18,10 +18,10 @@
             <button id="completedButton" class="button">Completed</button>
         </section>
         <hr class="line"/>
-        <section class="input-container" >
+        <form class="input-container" id="addButton">
             <input id="inputField" type="text" class="input-field" placeholder="add details" value=""/>
-            <button id="addButton" class="add-button">Add</button>
-        </section>
+            <button  type="submit" class="add-button">Add</button>
+        </form>
         <section class="todos-container-main" id="todoItemsMainContainer">
             <div id="todoItemsContainer" class="todos-container">
 
@@ -29,6 +29,7 @@
         </section>
     </todoapp>
     <button class="clear-all-button" id="clearAllButton">Clear All</button>
+    <p class="created">created by <span class="name">rajashekarmanda</span> - mountblue</p>
     <script src="./app.js" type="module"></script>
 </body>
 </html>

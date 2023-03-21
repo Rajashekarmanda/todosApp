@@ -152,3 +152,12 @@ body {
     border: 0px;
     margin-left: 1100px;
 }
+.created{
+    position: relative;
+    bottom: -330px;
+    text-align: center;
+}
+.name {
+    color: blue;
+    font-family: 'Roboto';
+}
