@@ -36,7 +36,6 @@ function handleAfterCompletedBtnClick(todosListAll, completedButtonEl, activeBut
 
 function handleAfterAllButtonClick(todosListAll, allButtonEl, activeButtonEl, completedButtonEl,
     clearAllButtonEl, inputFieldEl, addButtonEl) {
-        console.log('allbtn')
     inputFieldEl.focus()
     for (let eachItem of todosListAll) {
         eachItem.element.classList.remove('hidden-class')
