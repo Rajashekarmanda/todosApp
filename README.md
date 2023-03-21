@@ -4,6 +4,8 @@
 
 ### Github Link- https://github.com/Rajashekarmanda/todosApp.git
 
+### figma-todo - https://www.figma.com/file/SClDA1weEGA3Mo8Is8Sbf2/todo?node-id=0-1&t=PXUdB6qboaGptbLX-0
+
 # Folder Structure
     
     -----> # src
@@ -44,7 +46,6 @@
 
 * Used remove() method to remove elements. And used visibility:hidden css-property to hide/un-hide elements.
  
+### User Interface of todo 
 
-
-
-
+<a href="resource/Screenshot from 2023-03-21 16-06-22.png">

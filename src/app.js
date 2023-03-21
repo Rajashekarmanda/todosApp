@@ -88,24 +88,28 @@ addButtonEl.addEventListener("submit", function (event) {
         todosListAll = [...filterTodosListRest, todoToggleItem]
 
     })
-    deleteIconEl.addEventListener('click', function(){
+    deleteIconEl.addEventListener('click', function () {
         divEl.remove()
-        
+
     })
 })
 activeButtonEl.addEventListener('click', function () {
     inputFieldEl.focus()
+
     handleAfterActiveButtonClick(todosListAll, activeButtonEl,
         completedButtonEl, allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
 })
 completedButtonEl.addEventListener('click', function () {
+
     handleAfterCompletedBtnClick(todosListAll, completedButtonEl, activeButtonEl,
         allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
 })
 allButtonEl.addEventListener('click', function () {
+
     handleAfterAllButtonClick(todosListAll, allButtonEl, activeButtonEl, completedButtonEl,
         clearAllButtonEl, inputFieldEl, addButtonEl)
 })
 clearAllButtonEl.addEventListener('click', function () {
+
     todosListAll.map(eachTodo => (eachTodo.completed === true ? eachTodo.element.remove() : ''))
 })
