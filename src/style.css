@@ -90,7 +90,6 @@ body {
     padding: 4px;
     margin-top: 20px;
 }
-
 .todos-container-main {
     display: flex;
     flex-direction: column;
@@ -127,7 +126,6 @@ body {
     visibility: hidden;
     display: none;
 }
-
 .active-button-class {
 
     border: 2px solid green;
