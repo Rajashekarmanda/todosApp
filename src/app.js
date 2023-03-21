@@ -1,8 +1,13 @@
+const { handleAfterActiveButtonClick,
+    handleAfterCompletedBtnClick,
+    handleAfterAllButtonClick } = require('../src/func.js')
+
 let allButtonEl = document.getElementById("allButton")
 let activeButtonEl = document.getElementById("activeButton")
 let completedButtonEl = document.getElementById("completedButton")
 
 let inputFieldEl = document.getElementById("inputField")
+inputFieldEl.focus()
 let addButtonEl = document.getElementById("addButton")
 let clearAllButtonEl = document.getElementById('clearAllButton')
 
@@ -15,7 +20,6 @@ clearAllButtonEl.classList.add('hidden-class')
 
 inputFieldEl.addEventListener("input", function (event) {
     inputFieldEl.value = event.target.value
-    //console.log(event.target.value)
 })
 
 addButtonEl.addEventListener("click", function (event) {
@@ -53,109 +57,50 @@ addButtonEl.addEventListener("click", function (event) {
         imageEl: deleteIconEl
     })
     count++
+    inputFieldEl.focus()
 
     checkboxEl.addEventListener('click', function (e) {
-
-        // console.log('clicked e')
-
         todoContentEl.classList.toggle('strike-off-text')
-
         let filterTodosList = todosListAll.filter((each) => each.element === divEl)
-
         let filterTodosListRest = todosListAll.filter((each) => each.element !== divEl)
-
         let todoToggleItem;
 
-        for (let each of filterTodosList) {
-
-            if (each.active === true && each.completed === false) {
-
-                todoToggleItem = {
-                    id: count,
-                    element: divEl,
-                    todoItem: todoContentEl.textContent,
-                    all: true,
-                    active: false,
-                    completed: true,
-                    imageEl: deleteIconEl
-                }
-            } else {
-                todoToggleItem = {
-                    id: count,
-                    element: divEl,
-                    todoItem: todoContentEl.textContent,
-                    all: true,
-                    active: true,
-                    completed: false,
-                    imageEl: deleteIconEl
-                }
+        filterTodosList.map((eachTodo) => {
+            (eachTodo.active === true && eachTodo.completed === false) ? todoToggleItem = {
+                id: count,
+                element: divEl,
+                todoItem: todoContentEl.textContent,
+                all: true,
+                active: false,
+                completed: true,
+                imageEl: deleteIconEl
+            } : todoToggleItem = {
+                id: count,
+                element: divEl,
+                todoItem: todoContentEl.textContent,
+                all: true,
+                active: true,
+                completed: false,
+                imageEl: deleteIconEl
             }
-        }
+        })
         todosListAll = [...filterTodosListRest, todoToggleItem]
-
-        // localStorage.setItem('todoList',todosListAll)
-
     })
-
-    deleteIconEl.addEventListener('click', function () {
-
-        console.log(divEl)
-        divEl.remove()
-    })
-
+    deleteIconEl.addEventListener('click', () => divEl.remove())
 })
-
 activeButtonEl.addEventListener('click', function () {
-    for (let eachItem of todosListAll) {
-        if (eachItem.active === false) {
-            eachItem.element.classList.add('hidden-class')
-            eachItem.imageEl.classList.add('hidden-class')
-        } else {
-            eachItem.element.classList.remove('hidden-class')
-        }
-    }
-    activeButtonEl.classList.add('active-button-class')
-    completedButtonEl.classList.remove('active-button-class')
-    allButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.add('hidden-class')
-    inputFieldEl.classList.remove('hidden-class')
-    addButtonEl.classList.remove('hidden-class')
+    inputFieldEl.focus()
+    handleAfterActiveButtonClick(todosListAll, activeButtonEl,
+        completedButtonEl, allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
 })
-
 completedButtonEl.addEventListener('click', function () {
-    for (let eachItem of todosListAll) {
-        if (eachItem.completed === false) {
-            eachItem.element.classList.add('hidden-class')
-        } else {
-            eachItem.element.classList.remove('hidden-class')
-            eachItem.imageEl.classList.remove('hidden-class')
-        }
-    }
-    completedButtonEl.classList.add('active-button-class')
-    activeButtonEl.classList.remove('active-button-class')
-    allButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.remove('hidden-class')
-    inputFieldEl.classList.add('hidden-class')
-    addButtonEl.classList.add('hidden-class')
+    handleAfterCompletedBtnClick(todosListAll, completedButtonEl, activeButtonEl,
+        allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
 })
-
 allButtonEl.addEventListener('click', function () {
-    for (let eachItem of todosListAll) {
-        eachItem.element.classList.remove('hidden-class')
-        eachItem.imageEl.classList.add('hidden-class');
-    }
-    allButtonEl.classList.add('active-button-class')
-    activeButtonEl.classList.remove('active-button-class')
-    completedButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.add('hidden-class')
-    inputFieldEl.classList.remove('hidden-class')
-    addButtonEl.classList.remove('hidden-class')
+    handleAfterAllButtonClick(todosListAll, allButtonEl, activeButtonEl, completedButtonEl,
+        clearAllButtonEl, inputFieldEl, addButtonEl)
 })
-
 clearAllButtonEl.addEventListener('click', function () {
-    for (let eachTodo of todosListAll) {
-        if (eachTodo.completed === true) {
-            eachTodo.element.remove()
-        }
-    }
+    todosListAll.map(eachTodo => (eachTodo.completed === true ? eachTodo.element.remove() : ''))
 })
