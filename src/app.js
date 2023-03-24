@@ -4,6 +4,7 @@ let allButtonEl = document.getElementById("allButton")
 let activeButtonEl = document.getElementById("activeButton")
 let completedButtonEl = document.getElementById("completedButton")
 let inputFieldEl = document.getElementById("inputField")
+
 let addButtonEl = document.getElementById("addButton")
 let clearAllButtonEl = document.getElementById('clearAllButton')
 let todosContainerEl = document.getElementById("todoItemsContainer")
@@ -20,34 +21,17 @@ addButtonEl.addEventListener("submit", function (event) {
     divEl.setAttribute('id', `todoContainer${count + 1}`)
     todosContainerEl.appendChild(divEl)
 
-    let checkboxEl = document.createElement("input")
-    checkboxEl.setAttribute('type', 'checkbox')
-    checkboxEl.setAttribute('class', 'todo-item-checkbox')
-    checkboxEl.setAttribute('id', `checkboxEl${count}`)
-    divEl.appendChild(checkboxEl)
+    divEl.innerHTML =
+        `<input type="checkbox" class="todo-item-checkbox" id="checkboxEl${count}"/>            
+        <label class="todo-item-content" for="checkboxEl${count}" id="label${count}"> ${inputFieldEl.value}</label>            
+        <img src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png" class="delete-image hidden-class" id="delete${count}"/>`
 
-    let todoContentEl = document.createElement("label")
-    todoContentEl.setAttribute('class', 'todo-item-content')
-    todoContentEl.setAttribute('for', `checkboxEl${count}`)
-    todoContentEl.textContent = inputFieldEl.value
-    divEl.appendChild(todoContentEl)
+    let deleteIconEl = document.getElementById(`delete${count}`)
+    let todoContentEl = document.getElementById(`label${count}`)
+    let checkboxEl = document.getElementById(`checkboxEl${count}`)
     inputFieldEl.value = ''
 
-    let deleteIconEl = document.createElement("img")
-    deleteIconEl.setAttribute('src', 'https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png')
-    deleteIconEl.setAttribute('class', 'delete-image')
-    deleteIconEl.classList.add('hidden-class')
-    divEl.appendChild(deleteIconEl)
-
-    todosListAll.push({
-        id: `todoContainer${count + 1}`,
-        element: divEl,
-        todoItem: todoContentEl.textContent,
-        all: true,
-        active: true,
-        completed: false,
-        imageEl: deleteIconEl
-    })
+    todosListAll.push({id: `todoContainer${count + 1}`,element: divEl,todoItem: todoContentEl.textContent,all: true,active: true,completed: false,imageEl: deleteIconEl})
     count++
     inputFieldEl.focus()
 

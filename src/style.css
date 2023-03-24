@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* border: 2px solid green; */
 }
 
 .todo-heading {
@@ -26,13 +25,11 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* padding: 2px; */
     width: 500px;
     border: 2px solid #BDBDBD;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    /* border-bottom: 2px; */
     margin-bottom: 20px;
 }
 
@@ -53,11 +50,9 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    /* border: 1px solid red; */
     width: 500px;
     height: 50px;
     margin-top: 10px;
-    /* border-color:  #BDBDBD; */
 }
 
 .input-field {
@@ -69,7 +64,6 @@ body {
     font-family: Montserrat;
     font-style: Regular;
     vertical-align: top;
-    /* color: #000000; */
     padding-left: 15px;
     margin-right: 10px;
     cursor: pointer;
@@ -95,7 +89,6 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     width: 500px;
-    /* border: 0.1px solid red ; */
     padding: 4px;
     margin-top: 20px;
 }
@@ -103,8 +96,8 @@ body {
 .todos-container-main {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
     height: 40vh;
+    margin-top: 2px;
 }
 
 .todo-item-container {
@@ -112,7 +105,6 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    /* border: 1px solid black; */
     padding: 5px;
 }
 
@@ -131,6 +123,7 @@ body {
     height: 20px;
     width: 20px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .strike-off-text {
@@ -144,15 +137,10 @@ body {
 
 .active-button-class {
     border: 2px solid blue;
-    /* background-color: blue; */
-    /* border-radius: 4px 4px 0 0; */
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    /* height: -2px; */
-    /* background-color: rgb(171, 168, 162); */
     color: #333333;
-    /* border-radius: 4px 4px 0px 0px; */
     cursor: pointer;
 }
 
@@ -179,7 +167,6 @@ body {
     position: relative;
     bottom: -330px;
     text-align: center;
-    /* position: fixed; */
     font-family: montessarat;
     color: #A9A9A9
 }
@@ -187,6 +174,5 @@ body {
 .name {
     color: #A9A9A9;
     font-family: montessarat;
-    /* position: fixed; */
     font-weight: 600;
 }
