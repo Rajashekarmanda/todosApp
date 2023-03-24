@@ -31,6 +31,8 @@ body {
     border-left: 0px;
     border-right: 0px;
     margin-bottom: 20px;
+    height: 28px;
+    padding: 2px;
 }
 
 .button {
@@ -43,6 +45,28 @@ body {
     font-style: SemiBold;
     background-color: transparent;
     font-weight: 600;
+    height: 35px;
+    padding: 1px;
+    margin-bottom: 4px;
+}
+
+.active-button-class {
+    border: 3px solid blue;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    color: #333333;
+    cursor: pointer;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    font-size: 18px;
+    font-family: Montserrat;
+    vertical-align: top;
+    font-weight: 600;
+    height: 35px;
+    padding: 1px;
+    margin-bottom: 4px;
+
 }
 
 .input-container {
@@ -135,15 +159,6 @@ body {
     display: none;
 }
 
-.active-button-class {
-    border: 2px solid blue;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    color: #333333;
-    cursor: pointer;
-}
-
 .delete-image {
     height: 24px;
     width: 20px;
@@ -175,4 +190,144 @@ body {
     color: #A9A9A9;
     font-family: montessarat;
     font-weight: 600;
+}
+
+
+
+
+/* responsive break point at 768px*/
+
+@media screen and (max-width:768px) {
+
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .app-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-heading {
+        color: #333333;
+        font-family: Raleway;
+        font-weight: 800;
+        font-size: 24px;
+        letter-spacing: -4.5%;
+        vertical-align: top;
+        margin-bottom: 40px;
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        border: 2px solid #BDBDBD;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        margin-bottom: 12px;
+        height: 22px;
+        padding: 1px;
+    }
+
+    .button {
+        border: 0px;
+        cursor: pointer;
+        scroll-behavior: smooth;
+        font-size: 14px;
+        font-family: Montserrat;
+        vertical-align: top;
+        font-style: SemiBold;
+        background-color: transparent;
+        font-weight: 600;
+        height: 22px;
+        padding: 1px;
+        margin-bottom: 4px;
+    }
+
+    .active-button-class {
+        border: 3px solid blue;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        color: #333333;
+        cursor: pointer;
+        cursor: pointer;
+        scroll-behavior: smooth;
+        font-size: 18px;
+        font-family: Montserrat;
+        vertical-align: top;
+        font-weight: 600;
+        height: 22px;
+        padding: 1px;
+        margin-bottom: 4px;
+
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
+        height: 50px;
+        margin-top: 6px;
+    }
+
+    .input-field {
+        border-radius: 15px;
+        height: 30px;
+        width: 90%;
+        border: 1px solid #BDBDBD;
+        font-size: 16px;
+        font-family: Montserrat;
+        font-style: Regular;
+        vertical-align: top;
+        padding-left: 15px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .add-button {
+        border: 0px;
+        border-radius: 15px;
+        height: 30px;
+        width: 14%;
+        font-family: Montserrat;
+        background-color: blue;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+
+    }
+
+    .todos-container-main {
+        width: 80%;
+    }
+
+    .todo-item-content {
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-weight: 550;
+        line-height: 22px;
+        line-height: 100%;
+        color: #000000;
+        vertical-align: top;
+        width: 300px;
+    }
+
+    .todo-item-checkbox {
+        height: 14px;
+        width: 14px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
 }

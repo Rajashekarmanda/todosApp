@@ -24,14 +24,18 @@ addButtonEl.addEventListener("submit", function (event) {
     divEl.innerHTML =
         `<input type="checkbox" class="todo-item-checkbox" id="checkboxEl${count}"/>            
         <label class="todo-item-content" for="checkboxEl${count}" id="label${count}"> ${inputFieldEl.value}</label>            
-        <img src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png" class="delete-image hidden-class" id="delete${count}"/>`
+        <img src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png" 
+        class="delete-image hidden-class" id="delete${count}"/>`
 
     let deleteIconEl = document.getElementById(`delete${count}`)
     let todoContentEl = document.getElementById(`label${count}`)
     let checkboxEl = document.getElementById(`checkboxEl${count}`)
     inputFieldEl.value = ''
 
-    todosListAll.push({id: `todoContainer${count + 1}`,element: divEl,todoItem: todoContentEl.textContent,all: true,active: true,completed: false,imageEl: deleteIconEl})
+    todosListAll.push({
+        id: `todoContainer${count + 1}`, element: divEl, todoItem: todoContentEl.textContent, all: true,
+        active: true, completed: false, imageEl: deleteIconEl
+    })
     count++
     inputFieldEl.focus()
 

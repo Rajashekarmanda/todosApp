@@ -55,9 +55,11 @@
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
 
 ### Used parcel-bundler third party package for bundling all JS modules & run server on PORT - localhost:1234 enter "npm run start" to start server.
-* You can install if you need by enter ----> npm init -y  
-*                                               npm install --save-dev parcel-bundler
-*                                               npm run start (open index.html file and run this command)
+* You can install if you need by enter
+*               npm init -y  
+*               npm install 
+*               npm run start 
+*               npm install --save-dev parcel-bundler (optional for parcel)
 
 * Added .gitignore to ignore files on github when push.
 

@@ -15,6 +15,7 @@ function activeBtnTask(todosListAll, ...argumetsArray) {
         else document.getElementById(`${each.id}`).classList.remove('hidden-class')
     })
 }
+
 function completedBtnTask(todosListAll, ...argumetsArray) {
     document.getElementById('inputField').focus()
     todosListAll.map(eachItem => {
@@ -32,6 +33,7 @@ function completedBtnTask(todosListAll, ...argumetsArray) {
         else document.getElementById(`${each.id}`).classList.add('hidden-class')
     })
 }
+
 function allBtnTask(todosListAll, ...argumetsArray) {
     document.getElementById('inputField').focus()
     todosListAll.map(eachItem => {
