@@ -20,6 +20,10 @@
   </h3>
 </div>
 
+### User Interface WebPage
+![](resource/image.png)
+
+
 
 ## Folder Structure
     
@@ -44,20 +48,20 @@
 * Some functionalities written like after clicking active & completed button have to perform some tasks.
 * Run server on index.html if you open .js file and try to run a server it will give error. So try to run server by open index.html file only.
 
-## Features
+### Features
 * We can list out daily tasks & if any task done we can strike-off it. 
 * User can enter input as a title of task
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
 
-## Used parcel-bundler third party package for bundling all JS modules & run server on PORT - localhost:1234 enter "npm run start" to start server.
+### Used parcel-bundler third party package for bundling all JS modules & run server on PORT - localhost:1234 enter "npm run start" to start server.
 * You can install if you need by enter ----> npm init -y  
 *                                               npm install --save-dev parcel-bundler
 *                                               npm run start (open index.html file and run this command)
 
 * Added .gitignore to ignore files on github when push.
 
-## added event litseners to Each button perform particular task.
+### added event litseners to Each button perform particular task.
 * add-button
 * clear-button
 * delete-button (icon)
@@ -69,7 +73,6 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 * <a href="resource/Screenshot from 2023-03-21 16-06-22.png">### @User Interface of todo App Link</a>
 
-
-## Contact
+### Contact
 
 * Github [@rajashekarmanda](https://github.com/Rajashekarmanda)
