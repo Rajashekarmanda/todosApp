@@ -1,10 +1,27 @@
-# todo APP 
+# todo APP
 
-### netlify link- https://rajashekarmandatodoapp.netlify.app/
+<h1 align="center">{Your project name}</h1>
 
-### Github Link- https://github.com/Rajashekarmanda/todosApp.git
+<div align="center">
+   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
 
-### figma-todo(reference) - https://www.figma.com/file/SClDA1weEGA3Mo8Is8Sbf2/todo?node-id=0-1&t=PXUdB6qboaGptbLX-0
+<div align="center">
+  <h3>
+    <a href="https://rajashekarmandatodoapp.netlify.app/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://github.com/Rajashekarmanda/todosApp.git">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://www.figma.com/file/SClDA1weEGA3Mo8Is8Sbf2/todo?node-id=0-1&t=PXUdB6qboaGptbLX-0">
+      Challenge
+    </a>
+  </h3>
+</div>
+
 
 ## Folder Structure
     
@@ -28,6 +45,12 @@
 * Main app logics & handling event litseners are written in app.js
 * Some functionalities written like after clicking active & completed button have to perform some tasks.
 * Run server on index.html if you open .js file and try to run a server it will give error. So try to run server by open index.html file only.
+
+## Features
+* We can list out daily tasks & if any task done we can strike-off it. 
+* User can enter input as a title of task
+
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
 
 ## Used parcel-bundler third party package for bundling all JS modules & run server on PORT - localhost:1234 enter "npm run start" to start server.
 * You can install if you need by enter ----> npm init -y  
