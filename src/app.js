@@ -1,26 +1,17 @@
-const { handleAfterActiveButtonClick,
-    handleAfterCompletedBtnClick,
-    handleAfterAllButtonClick } = require('../src/func.js')
+const { activeBtnTask, completedBtnTask, allBtnTask } = require('../src/func.js')
 
 let allButtonEl = document.getElementById("allButton")
 let activeButtonEl = document.getElementById("activeButton")
 let completedButtonEl = document.getElementById("completedButton")
-
 let inputFieldEl = document.getElementById("inputField")
-inputFieldEl.focus()
 let addButtonEl = document.getElementById("addButton")
 let clearAllButtonEl = document.getElementById('clearAllButton')
-
 let todosContainerEl = document.getElementById("todoItemsContainer")
-let todoItemsMainContainerEl = document.getElementById("todoItemsMainContainer")
+clearAllButtonEl.classList.add('hidden-class')
+inputFieldEl.focus()
 
 let todosListAll = []
 let count = 0
-clearAllButtonEl.classList.add('hidden-class')
-
-inputFieldEl.addEventListener("input", function (event) {
-    inputFieldEl.value = event.target.value
-})
 
 addButtonEl.addEventListener("submit", function (event) {
     event.preventDefault()
@@ -86,30 +77,13 @@ addButtonEl.addEventListener("submit", function (event) {
             }
         })
         todosListAll = [...filterTodosListRest, todoToggleItem]
-
     })
-    deleteIconEl.addEventListener('click', function () {
-        divEl.remove()
-
-    })
+    deleteIconEl.addEventListener('click', () => divEl.remove())
 })
-activeButtonEl.addEventListener('click', function () {
-    inputFieldEl.focus()
+let buttonElmentsArray = [activeButtonEl, allButtonEl, completedButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl]
 
-    handleAfterActiveButtonClick(todosListAll, activeButtonEl,
-        completedButtonEl, allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
-})
-completedButtonEl.addEventListener('click', function () {
-
-    handleAfterCompletedBtnClick(todosListAll, completedButtonEl, activeButtonEl,
-        allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl)
-})
-allButtonEl.addEventListener('click', function () {
-
-    handleAfterAllButtonClick(todosListAll, allButtonEl, activeButtonEl, completedButtonEl,
-        clearAllButtonEl, inputFieldEl, addButtonEl)
-})
-clearAllButtonEl.addEventListener('click', function () {
-
-    todosListAll.map(eachTodo => (eachTodo.completed === true ? eachTodo.element.remove() : ''))
-})
+inputFieldEl.addEventListener("input", (event) => inputFieldEl.value = event.target.value)
+activeButtonEl.addEventListener('click', () => activeBtnTask(todosListAll, ...buttonElmentsArray))
+completedButtonEl.addEventListener('click', () => completedBtnTask(todosListAll, ...buttonElmentsArray))
+allButtonEl.addEventListener('click', () => allBtnTask(todosListAll, ...buttonElmentsArray))
+clearAllButtonEl.addEventListener('click', () => todosListAll.map(eachTodo => (eachTodo.completed === true ? eachTodo.element.remove() : '')))

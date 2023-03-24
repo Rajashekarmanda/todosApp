@@ -1,52 +1,48 @@
-function handleAfterActiveButtonClick(todosListAll, activeButtonEl, completedButtonEl,
-    allButtonEl, clearAllButtonEl, inputFieldEl, addButtonEl) {
-    for (let eachItem of todosListAll) {
+function activeBtnTask(todosListAll, ...argumetsArray) {
+    document.getElementById('inputField').focus()
+    todosListAll.map(eachItem => {
         if (eachItem.active === false) {
             eachItem.element.classList.add('hidden-class')
             eachItem.imageEl.classList.add('hidden-class')
         } else {
             eachItem.element.classList.remove('hidden-class')
         }
-    }
-    activeButtonEl.classList.add('active-button-class')
-    completedButtonEl.classList.remove('active-button-class')
-    allButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.add('hidden-class')
-    inputFieldEl.classList.remove('hidden-class')
-    addButtonEl.classList.remove('hidden-class')
+    })
+    argumetsArray.map(each => {
+        if (each.id === 'activeButton') document.getElementById(`${each.id}`).classList.add('active-button-class')
+        else if (each.id === 'completedButton' || each.id == 'allButton') document.getElementById(`${each.id}`).classList.remove('active-button-class')
+        else if (each.id === 'clearAllButton') document.getElementById(`${each.id}`).classList.add('hidden-class')
+        else document.getElementById(`${each.id}`).classList.remove('hidden-class')
+    })
 }
-
-function handleAfterCompletedBtnClick(todosListAll, completedButtonEl, activeButtonEl, allButtonEl,
-    clearAllButtonEl, inputFieldEl, addButtonEl) {
-    for (let eachItem of todosListAll) {
+function completedBtnTask(todosListAll, ...argumetsArray) {
+    document.getElementById('inputField').focus()
+    todosListAll.map(eachItem => {
         if (eachItem.completed === false) {
             eachItem.element.classList.add('hidden-class')
         } else {
             eachItem.element.classList.remove('hidden-class')
             eachItem.imageEl.classList.remove('hidden-class')
         }
-    }
-    completedButtonEl.classList.add('active-button-class')
-    activeButtonEl.classList.remove('active-button-class')
-    allButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.remove('hidden-class')
-    inputFieldEl.classList.add('hidden-class')
-    addButtonEl.classList.add('hidden-class')
+    })
+    argumetsArray.map(each => {
+        if (each.id === 'completedButton') document.getElementById(`${each.id}`).classList.add('active-button-class')
+        else if (each.id === 'activeButton' || each.id == 'allButton') document.getElementById(`${each.id}`).classList.remove('active-button-class')
+        else if (each.id === 'clearAllButton') document.getElementById(`${each.id}`).classList.remove('hidden-class')
+        else document.getElementById(`${each.id}`).classList.add('hidden-class')
+    })
 }
-
-function handleAfterAllButtonClick(todosListAll, allButtonEl, activeButtonEl, completedButtonEl,
-    clearAllButtonEl, inputFieldEl, addButtonEl) {
-    inputFieldEl.focus()
-    for (let eachItem of todosListAll) {
+function allBtnTask(todosListAll, ...argumetsArray) {
+    document.getElementById('inputField').focus()
+    todosListAll.map(eachItem => {
         eachItem.element.classList.remove('hidden-class')
         eachItem.imageEl.classList.add('hidden-class');
-    }
-    allButtonEl.classList.add('active-button-class')
-    activeButtonEl.classList.remove('active-button-class')
-    completedButtonEl.classList.remove('active-button-class')
-    clearAllButtonEl.classList.add('hidden-class')
-    inputFieldEl.classList.remove('hidden-class')
-    addButtonEl.classList.remove('hidden-class')
-
+    })
+    argumetsArray.map(each => {
+        if (each.id === 'allButton') document.getElementById(`${each.id}`).classList.add('active-button-class')
+        else if (each.id === 'activeButton' || each.id == 'completedButton') document.getElementById(`${each.id}`).classList.remove('active-button-class')
+        else if (each.id === 'clearAllButton') document.getElementById(`${each.id}`).classList.add('hidden-class')
+        else document.getElementById(`${each.id}`).classList.remove('hidden-class')
+    })
 }
-module.exports = { handleAfterActiveButtonClick, handleAfterCompletedBtnClick, handleAfterAllButtonClick }
+module.exports = { activeBtnTask, completedBtnTask, allBtnTask }
